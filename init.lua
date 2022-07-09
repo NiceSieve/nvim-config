@@ -5,20 +5,15 @@ local o = vim.opt
 local disabled_built_ins = {
 	'black',
 	'gzip',
-	-- 'man',
-	-- 'matchit',
-	-- 'matchparen',
 	'python3_provider',
-	-- 'shada_plugin',
 	'tarPlugin',
 	'tar',
 	'zipPlugin',
 	'zip',
-	-- 'netrwPlugin',
 }
 
 for i = 1, #(disabled_built_ins) do
-	vim.g['loaded_' .. disabled_built_ins[i]] = 1
+	vim.g['loaded_' .. disabled_built_ins[i]] = true
 end
 
 o.number = true --line numbers
