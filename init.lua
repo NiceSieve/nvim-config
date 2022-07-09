@@ -42,8 +42,6 @@ vim.g.mapleader = ' '
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>')
 vim.keymap.set('n', '<Esc>', ':noh<CR>')
 
--- require('colorbuddy').colorscheme('onebuddy')
--- vim.cmd 'colorscheme onedark'
 local base16 = require('base16')
 base16(base16.themes['onedark'], true)
 vim.g.airline_powerline_fonts = 1
