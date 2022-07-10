@@ -1,4 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
+	ensure_installed = {'lua', 'c', 'cpp', 'python', 'perl', 'vim', 'sql'},
 	highlight = {
 		enable = true,
 		custom_captures = {
@@ -35,6 +36,9 @@ require 'nvim-treesitter.configs'.setup {
 		},
 	},
 	indent = {
+		enable = true
+	},
+	matchup = {
 		enable = true
 	}
 }
