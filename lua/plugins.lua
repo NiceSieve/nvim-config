@@ -36,8 +36,8 @@ return require('packer').startup({
 
 		use {'nvim-telescope/telescope.nvim',
 				requires={
-					'nvim-lua/plenary.nvim',
-					{'nvim-telescope/telescope-fzf-native.nvim', run='make'},
+					{'nvim-lua/plenary.nvim', module='plenary'},
+					{'nvim-telescope/telescope-fzf-native.nvim', run='make', module='telescope'},
 				},
 				cmd='Telescope',
 				config=function() require('telescope').load_extension('fzf') end
