@@ -8,9 +8,21 @@ return require('packer').startup({
 		use 'bogado/file-line'
 		use {'jghauser/mkdir.nvim', event='BufWritePre'}
 		use 'wellle/targets.vim'
+		use {'andymass/vim-matchup',
+				config=function()
+					vim.g.matchup_matchparen_offscreen = {method="popup", fullwidth=1, border=1}
+				end
+			}
+		use {"windwp/nvim-autopairs",
+				config = function() require("nvim-autopairs").setup {} end,
+				event = 'InsertEnter'
+			}
 		use {'numToStr/Comment.nvim',
 				config = function() require('config.comment') end,
 				keys = {'<leader>c', '<leader>C'}
+			}
+		use {'FooSoft/vim-argwrap',
+				cmd="ArgWrap"
 			}
 
 		use {'nvim-lualine/lualine.nvim',

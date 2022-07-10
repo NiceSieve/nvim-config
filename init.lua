@@ -29,6 +29,7 @@ vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
 vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
+vim.keymap.set('n', '<leader>a', '<cmd>ArgWrap<cr>')
 vim.keymap.set('n', '<leader>g', function() require('neogit').open({kind='split'}) end)
 
 packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
