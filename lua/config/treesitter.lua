@@ -34,4 +34,7 @@ require 'nvim-treesitter.configs'.setup {
 			node_decremental = "<leader>R",
 		},
 	},
+	indent = {
+		enable = true
+	}
 }
