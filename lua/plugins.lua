@@ -11,8 +11,17 @@ return require('packer').startup({
 				keys = {'<leader>c', '<leader>C'}
 			}
 
-		use {'nvim-lualine/lualine.nvim', config = function() require('lualine').setup{options={theme='onedark'}} end}
-		use {'norcalli/nvim-base16.lua'}
+		use {'nvim-lualine/lualine.nvim',
+				config = function()
+					require('lualine').setup{options={theme='onedark'}}
+				end
+			}
+		use {'norcalli/nvim-base16.lua',
+				config = function()
+					local base16 = require('base16')
+					base16(base16.themes['onedark'], true)
+				end
+			}
 
 		use {'nvim-treesitter/nvim-treesitter',
 				requires={
@@ -41,7 +50,12 @@ return require('packer').startup({
 					{'hrsh7th/cmp-nvim-lua', after='nvim-cmp'},
 					{'dmitmel/cmp-cmdline-history', after='nvim-cmp'},
 					-- 'tamago324/cmp-zsh',
-					{'L3MON4D3/LuaSnip', config = function() require("luasnip.loaders.from_snipmate").lazy_load() end, after='nvim-cmp'},
+					{'L3MON4D3/LuaSnip',
+						config = function()
+							require("luasnip.loaders.from_snipmate").lazy_load()
+						end,
+						after='nvim-cmp'
+					},
 					{'saadparwaiz1/cmp_luasnip', after='LuaSnip'},
 					{'honza/vim-snippets', after='LuaSnip'}
 				},

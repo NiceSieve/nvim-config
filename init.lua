@@ -37,13 +37,6 @@ vim.g.mapleader = ' '
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>')
 vim.keymap.set('n', '<Esc>', ':noh<CR>')
 
-local base16 = require('base16')
-base16(base16.themes['onedark'], true)
-vim.g.airline_powerline_fonts = 1
-vim.g.airline_theme = 'onedark'
-vim.g.airline_extensions = {'undotree', 'nrrwrgn'}
-
-
 -- Find files using Telescope command-line sugar.
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
