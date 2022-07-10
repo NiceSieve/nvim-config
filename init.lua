@@ -31,9 +31,14 @@ vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
 vim.keymap.set('n', '<leader>g', function() require('neogit').open({kind='split'}) end)
 
-vim.cmd([[
-	augroup packer_user_config
-		autocmd!
-		autocmd BufWritePost plugins.lua source <afile> | PackerSync
-	augroup end
-]])
+packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
+vim.api.nvim_create_autocmd("BufWritePost",
+	{
+		group=packer_user_config,
+		pattern='*',
+		callback=function(t)
+			dofile(t.file)
+			require'packer'.sync()
+		end
+	}
+)
