@@ -2,9 +2,11 @@ return require('packer').startup({
 	function()
 		use 'wbthomason/packer.nvim'
 		use 'lewis6991/impatient.nvim'
+		use {'dstein64/vim-startuptime', cmd='StartupTime'}
 
 		use {'machakann/vim-sandwich', keys='s'}
 		use 'bogado/file-line'
+		use {'jghauser/mkdir.nvim', event='BufWritePre'}
 		use 'wellle/targets.vim'
 		use {'numToStr/Comment.nvim',
 				config = function() require('config.comment') end,
