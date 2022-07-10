@@ -44,6 +44,7 @@ vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
 vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
+vim.keymap.set('n', '<leader>g', function() require('neogit').open({kind='split'}) end)
 
 vim.cmd([[
 	augroup packer_user_config

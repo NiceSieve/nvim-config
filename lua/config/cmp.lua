@@ -94,7 +94,8 @@ cmp.setup.cmdline(':', {
 	sources = cmp.config.sources({
 		{ name = 'cmdline_history' },
 		{ name = 'path' },
-		{ name = 'cmdline' },
+		{ name = 'cmdline' }
+	},{
 		{ name = 'buffer' }
 	})
 })

@@ -66,12 +66,12 @@ return require('packer').startup({
 			}
 		use {'chrisbra/NrrwRgn', keys='<leader>nr'}
 		use {'kyazdani42/nvim-web-devicons', after={'nvim-cmp','telescope.nvim'}}
-		use {
-			  'mbbill/undotree',
-			  cmd = 'UndotreeToggle',
-			  config = [[vim.g.undotree_SetFocusWhenToggle = 1]],
-		}
-		use { 'TimUntersberger/neogit', cmd = 'Neogit' }
+		use {'mbbill/undotree',
+				cmd = 'UndotreeToggle',
+				config = [[vim.g.undotree_SetFocusWhenToggle = 1]],
+			}
+		use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+		use {'TimUntersberger/neogit', module = 'neogit'}
 	end,
 	config = {
 		display = {
