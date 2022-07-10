@@ -35,7 +35,7 @@ o.wildignorecase = true
 
 vim.g.mapleader = ' '
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>')
-vim.keymap.set('n', '<Esc>', ':noh<CR>')
+vim.keymap.set('n', '<Esc>', function() vim.fn.setreg("/", "") end)
 
 -- Find files using Telescope command-line sugar.
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
