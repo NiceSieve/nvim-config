@@ -3,9 +3,11 @@ return require('packer').startup({
 		use 'wbthomason/packer.nvim'
 		use 'lewis6991/impatient.nvim'
 		use {'dstein64/vim-startuptime', cmd='StartupTime'}
+		use "nathom/filetype.nvim"
 
 		use {'machakann/vim-sandwich', keys='s'}
 		use 'bogado/file-line'
+		use {'svermeulen/vim-NotableFt', keys={'f','F','t','T'}}
 		use {'jghauser/mkdir.nvim', event='BufWritePre'}
 		use 'wellle/targets.vim'
 		use {'andymass/vim-matchup',
