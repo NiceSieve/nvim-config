@@ -53,10 +53,12 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{ name = 'luasnip' }, -- For luasnip users.
-		{ name = 'nvim_lua' },
-		{ name = 'buffer' }
+		{ name = 'nvim_lua' }
 	},{
 		{ name = 'calc' }
+	},{
+		{ name = 'buffer' },
+		{ name = 'path' }
 	}),
 	formatting = {
 		  format = function(entry, vim_item)
@@ -93,7 +95,6 @@ cmp.setup.cmdline(':', {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
 		{ name = 'cmdline_history' },
-		{ name = 'path' },
 		{ name = 'cmdline' }
 	},{
 		{ name = 'buffer' }

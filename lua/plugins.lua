@@ -54,14 +54,21 @@ return require('packer').startup({
 				cmd='Telescope',
 				config=function() require('telescope').load_extension('fzf') end
 			}
+		use {"AckslD/nvim-neoclip.lua",
+				requires='nvim-telescope/telescope.nvim',
+				config = function()
+					require('neoclip').setup()
+				end
+			}
 
 		use {'hrsh7th/nvim-cmp',
 				requires={
 					{'hrsh7th/cmp-buffer', after='nvim-cmp'},
-					{'hrsh7th/cmp-path', after='nvim-cmp'},
-					{'hrsh7th/cmp-cmdline', after='nvim-cmp'},
 					{'hrsh7th/cmp-calc', after='nvim-cmp'},
+					{'hrsh7th/cmp-cmdline', after='nvim-cmp'},
 					{'hrsh7th/cmp-nvim-lua', after='nvim-cmp'},
+					{'hrsh7th/cmp-nvim-lsp', after='nvim-cmp', disable=true},
+					{'hrsh7th/cmp-path', after='nvim-cmp'},
 					{'dmitmel/cmp-cmdline-history', after='nvim-cmp'},
 					-- 'tamago324/cmp-zsh',
 					{'L3MON4D3/LuaSnip',
