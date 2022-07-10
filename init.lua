@@ -1,21 +1,6 @@
 require('impatient')
 local o = vim.opt
 
--- Disable some built-in plugins we don't want
-local disabled_built_ins = {
-	'black',
-	'gzip',
-	'python3_provider',
-	'tarPlugin',
-	'tar',
-	'zipPlugin',
-	'zip',
-}
-
-for i = 1, #(disabled_built_ins) do
-	vim.g['loaded_' .. disabled_built_ins[i]] = true
-end
-
 o.number = true --line numbers
 o.inccommand = "split" --incremental :s preview
 o.undofile = true --remember undo history
