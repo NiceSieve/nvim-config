@@ -35,7 +35,7 @@ packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
 vim.api.nvim_create_autocmd("BufWritePost",
 	{
 		group=packer_user_config,
-		pattern='*',
+		pattern='plugins.lua',
 		callback=function(t)
 			dofile(t.file)
 			require'packer'.sync()
