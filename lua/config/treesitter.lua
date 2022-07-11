@@ -40,5 +40,8 @@ require 'nvim-treesitter.configs'.setup {
 	},
 	matchup = {
 		enable = true
+	},
+	endwise = {
+		enable = true
 	}
 }

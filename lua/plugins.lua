@@ -6,7 +6,7 @@ return require('packer').startup({
 		use "nathom/filetype.nvim"
 
 		use {'machakann/vim-sandwich', keys='s'}
-		use 'bogado/file-line'
+		use 'wsdjeg/vim-fetch'
 		use {'svermeulen/vim-NotableFt', keys={'f','F','t','T'}}
 		use {'jghauser/mkdir.nvim', event='BufWritePre'}
 		use 'wellle/targets.vim'
@@ -42,7 +42,8 @@ return require('packer').startup({
 		use {'nvim-treesitter/nvim-treesitter',
 				requires={
 					'romgrk/nvim-treesitter-context',
-					'nvim-treesitter/nvim-treesitter-textobjects'
+					'nvim-treesitter/nvim-treesitter-textobjects',
+					{'RRethy/nvim-treesitter-endwise', event='InsertEnter'}
 				},
 				run=':TSUpdate',
 				config=function() require('config.treesitter') end
