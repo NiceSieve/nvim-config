@@ -8,6 +8,7 @@ o.hidden = true --don't close buffers when opening another
 o.list = true --show whitespace
 o.tabstop = 4 --tab size
 o.shiftwidth = 0 --follow tabstop
+o.wrap = false
 
 -- terminal bettering settings
 o.mouse = "a"
