@@ -88,12 +88,13 @@ return require('packer').startup({
 					-- 'tamago324/cmp-zsh', -- shell completion, looking into
 					{'L3MON4D3/LuaSnip', -- snippet engine
 						config = function()
+							require('luasnip').filetype_extend("all", { "_" })
 							require("luasnip.loaders.from_snipmate").lazy_load()
 						end,
-						after='nvim-cmp'
+						after='nvim-cmp',
+						requires={'honza/vim-snippets', after='LuaSnip'} -- snippet collection
 					},
-					{'saadparwaiz1/cmp_luasnip', after='LuaSnip'}, -- snippet completion
-					{'honza/vim-snippets', after='LuaSnip'} -- snippet collection
+					{'saadparwaiz1/cmp_luasnip', after='LuaSnip'} -- snippet completion
 				},
 				config = function() require('config.cmp') end,
 				event = {'InsertEnter *', 'CmdlineEnter *'}

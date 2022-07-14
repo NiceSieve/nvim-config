@@ -23,20 +23,19 @@ require 'nvim-treesitter.configs'.setup {
 				["if"] = "@function.inner",
 				["ac"] = "@class.outer",
 				["ic"] = "@class.inner",
+				["ap"] = "@block.outer",
+				["ip"] = "@block.inner",
 			},
 		},
 	},
 	incremental_selection = {
 		enable = true,
 		keymaps = {
-			init_selection = "<leader>r",
-			node_incremental = "<leader>r",
+			-- init_selection = "<leader>r",
+			node_incremental = "+",
 			-- scope_incremental = "<leader>rc",
-			node_decremental = "<leader>R",
+			node_decremental = "-",
 		},
-	},
-	indent = {
-		enable = true
 	},
 	matchup = {
 		enable = true
