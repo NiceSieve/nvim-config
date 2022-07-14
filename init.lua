@@ -35,7 +35,7 @@ vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<cr>')
 vim.keymap.set('n', '<leader>a', '<cmd>ArgWrap<cr>')
 vim.keymap.set('n', '<leader>g', function() require('neogit').open({kind='split'}) end)
 
-packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {})
+packer_user_config = vim.api.nvim_create_augroup('packer_user_config', {clear=true})
 vim.api.nvim_create_autocmd("BufWritePost",
 	{
 		group=packer_user_config,
