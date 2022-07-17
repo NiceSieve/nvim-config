@@ -1,6 +1,7 @@
 return require('packer').startup({
 	function()
 		use 'wbthomason/packer.nvim' -- plugin manager
+		use {'nvim-lua/plenary.nvim', module='plenary'} -- dependency
 		-- Performance:
 		use 'lewis6991/impatient.nvim' -- lua cache
 		use {'dstein64/vim-startuptime', cmd='StartupTime'} -- profiling
@@ -58,7 +59,6 @@ return require('packer').startup({
 		-- Fuzzy menu
 		use {'nvim-telescope/telescope.nvim',
 				requires={
-					{'nvim-lua/plenary.nvim', module='plenary'}, -- dependency
 					{'nvim-telescope/telescope-fzf-native.nvim', -- faster backend
 						run='make',
 						module='telescope'
@@ -68,10 +68,11 @@ return require('packer').startup({
 				config=function() require('telescope').load_extension('fzf') end
 			}
 		use {"AckslD/nvim-neoclip.lua", -- clipboard history
-				requires='nvim-telescope/telescope.nvim',
+				requires='telescope.nvim',
 				config = function()
 					require('neoclip').setup()
-				end
+				end,
+				after='telescope.nvim'
 			}
 		-- Completion
 		use {'hrsh7th/nvim-cmp',
