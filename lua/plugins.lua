@@ -37,6 +37,7 @@ return require('packer').startup({
 		-- Looks
 		use {'nvim-lualine/lualine.nvim', -- statusline
 				config = function()
+					vim.opt.laststatus=3
 					require('lualine').setup{options={theme='onedark'}}
 				end
 			}
