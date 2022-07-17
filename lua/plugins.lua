@@ -48,13 +48,15 @@ return require('packer').startup({
 		use {'kyazdani42/nvim-web-devicons', after={'nvim-cmp','telescope.nvim'}} -- pretty icons
 		-- Syntax handling
 		use {'nvim-treesitter/nvim-treesitter',
-				requires={
-					'romgrk/nvim-treesitter-context', -- show context at top
-					'nvim-treesitter/nvim-treesitter-textobjects',
-					{'RRethy/nvim-treesitter-endwise', event='InsertEnter'} -- autopairs for lua
-				},
 				run=':TSUpdate',
-				config=function() require('config.treesitter') end
+				config=function() require('config.treesitter') end,
+				requires={
+					{'romgrk/nvim-treesitter-context', after='nvim-treesitter'}, -- show context at top
+					{'nvim-treesitter/nvim-treesitter-textobjects', after='nvim-treesitter'},
+					{'RRethy/nvim-treesitter-endwise', after='nvim-treesitter'}, -- autopairs for lua
+					{'nvim-treesitter/nvim-treesitter-refactor', after='nvim-treesitter'}, -- autopairs for lua
+					{'JoosepAlviste/nvim-ts-context-commentstring', after='nvim-treesitter'} -- autopairs for lua
+				}
 			}
 		-- Fuzzy menu
 		use {'nvim-telescope/telescope.nvim',
