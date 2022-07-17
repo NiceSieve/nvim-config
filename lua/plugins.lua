@@ -36,10 +36,7 @@ return require('packer').startup({
 		use {'TimUntersberger/neogit', module = 'neogit'} -- git frontend
 		-- Looks
 		use {'nvim-lualine/lualine.nvim', -- statusline
-				config = function()
-					vim.opt.laststatus=3
-					require('lualine').setup{options={theme='onedark'}}
-				end
+				config = function() require('config.line') end
 			}
 		use {'norcalli/nvim-base16.lua', -- color scheme
 				config = function()
