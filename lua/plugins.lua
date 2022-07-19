@@ -14,7 +14,7 @@ return require('packer').startup({
 		use 'wellle/targets.vim' -- smarter lookahead text objects
 		use {'andymass/vim-matchup', -- smart pair highlighting and %
 				config=function()
-					vim.g.matchup_matchparen_offscreen = {method="popup", fullwidth=1, border=1}
+					vim.g.matchup_matchparen_offscreen = {method="popup", fullwidth=1}
 				end
 			}
 		use {"windwp/nvim-autopairs", -- auto close parens etc.
