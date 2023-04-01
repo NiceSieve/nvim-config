@@ -29,6 +29,10 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = ""
 }
+function has_words_before()
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 
 cmp.setup({
 	snippet = {
@@ -45,8 +49,8 @@ cmp.setup({
 					cmp.select_next_item()
 				elseif luasnip.expand_or_jumpable() then
 					luasnip.expand_or_jump()
-				-- elseif has_words_before() then
-				-- 	cmp.complete()
+				elseif has_words_before() then
+					cmp.complete()
 				else
 					fallback()
 				end
@@ -71,6 +75,7 @@ cmp.setup({
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
 	},
 	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' }, -- for LSP
 		{ name = 'luasnip' }, -- For luasnip users.
 		{ name = 'nvim_lua' }
 	},{
@@ -107,6 +112,12 @@ cmp.setup({
 	  }
 })
 
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require('lspconfig').rust_analyzer.setup {
+  capabilities = capabilities
+}
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {

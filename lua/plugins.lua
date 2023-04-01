@@ -19,7 +19,8 @@ return require('packer').startup({
 			}
 		use {"windwp/nvim-autopairs", -- auto close parens etc.
 				config = function() require("nvim-autopairs").setup {} end,
-				event = 'InsertEnter'
+				event = 'InsertEnter',
+				after = 'nvim-cmp'
 			}
 		use {'numToStr/Comment.nvim', -- comment and uncomment code
 				config = function() require('config.comment') end,
@@ -92,7 +93,7 @@ return require('packer').startup({
 							require('luasnip').filetype_extend("all", { "_" })
 							require("luasnip.loaders.from_snipmate").lazy_load()
 						end,
-						after='nvim-cmp',
+						module = 'luasnip',
 						requires={'honza/vim-snippets', after='LuaSnip'} -- snippet collection
 					},
 					{'saadparwaiz1/cmp_luasnip', after='LuaSnip'} -- snippet completion
@@ -100,6 +101,7 @@ return require('packer').startup({
 				config = function() require('config.cmp') end,
 				event = {'InsertEnter *', 'CmdlineEnter *'}
 			}
+		use {'hrsh7th/cmp-nvim-lsp', requires={'neovim/nvim-lspconfig', config=function() require('config.lsp') end}} -- LSP completion
 	end,
 	config = {
 		display = {
