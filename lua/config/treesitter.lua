@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-	ensure_installed = {'lua', 'c', 'cpp', 'python', 'perl', 'vim', 'sql'},
+	ensure_installed = {'lua', 'c', 'cpp', 'python', 'perl', 'vim', 'sql', 'rust'},
 	highlight = {
 		enable = true,
 		custom_captures = {
@@ -46,8 +46,4 @@ require 'nvim-treesitter.configs'.setup {
 	refactor = {
 		enable = true
 	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false
-	}
 }

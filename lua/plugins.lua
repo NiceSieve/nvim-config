@@ -35,7 +35,10 @@ return require('packer').startup({
 				config = function() vim.g.undotree_SetFocusWhenToggle = 1 end
 			}
 		use {'kevinhwang91/nvim-bqf', ft = 'qf'} -- nicer quickfix buffer
-		use {'TimUntersberger/neogit', module = 'neogit'} -- git frontend
+		use {'NeogitOrg/neogit', -- git frontend
+				module = 'neogit',
+				config = function() require('neogit').setup {} end
+			}
 		-- Looks
 		use {'nvim-lualine/lualine.nvim', -- statusline
 				config = function() require('config.line') end
@@ -49,14 +52,14 @@ return require('packer').startup({
 		use {'kyazdani42/nvim-web-devicons', after={'nvim-cmp','telescope.nvim'}} -- pretty icons
 		-- Syntax handling
 		use {'nvim-treesitter/nvim-treesitter',
-				run=':TSUpdate',
+				run=':TSUpdateSync',
 				config=function() require('config.treesitter') end,
 				requires={
 					{'romgrk/nvim-treesitter-context', after='nvim-treesitter'}, -- show context at top
 					{'nvim-treesitter/nvim-treesitter-textobjects', after='nvim-treesitter'},
 					{'RRethy/nvim-treesitter-endwise', after='nvim-treesitter'}, -- autopairs for lua
 					{'nvim-treesitter/nvim-treesitter-refactor', after='nvim-treesitter'}, -- autopairs for lua
-					{'JoosepAlviste/nvim-ts-context-commentstring', after='nvim-treesitter'} -- autopairs for lua
+					{'JoosepAlviste/nvim-ts-context-commentstring', after='nvim-treesitter', config = function() require('ts_context_commentstring').setup {} end} -- autopairs for lua
 				}
 			}
 		-- Fuzzy menu
@@ -70,6 +73,7 @@ return require('packer').startup({
 				cmd='Telescope',
 				config=function() require('telescope').load_extension('fzf') end
 			}
+		use {'jremmen/vim-ripgrep', cmd="Rg"} -- ripgrep for when I want multiple results
 		use {"AckslD/nvim-neoclip.lua", -- clipboard history
 				requires='telescope.nvim',
 				config = function()
