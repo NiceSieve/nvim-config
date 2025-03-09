@@ -1,4 +1,4 @@
-require('impatient')
+-- require('impatient')
 local o = vim.opt
 
 o.number = true --line numbers

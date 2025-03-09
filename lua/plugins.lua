@@ -3,9 +3,9 @@ return require('packer').startup({
 		use 'wbthomason/packer.nvim' -- plugin manager
 		use {'nvim-lua/plenary.nvim', module='plenary'} -- dependency
 		-- Performance:
-		use 'lewis6991/impatient.nvim' -- lua cache
+		-- use 'lewis6991/impatient.nvim' -- lua cache
 		use {'dstein64/vim-startuptime', cmd='StartupTime'} -- profiling
-		use "nathom/filetype.nvim" -- faster builtin replacement
+		--[[ use "nathom/filetype.nvim" -- faster builtin replacement ]]
 		-- Editing:
 		use {'machakann/vim-sandwich', keys='s'} -- surround text
 		use 'wsdjeg/vim-fetch' -- open files with line/column
