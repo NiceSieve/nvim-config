@@ -21,6 +21,7 @@ o.wildignorecase = true -- case insensitive completion too
 
 vim.g.mapleader = ' ' -- space is the leader cuz it's the biggest
 o.timeout = false -- I'm slow
+o.updatetime = 200
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>') -- exit term mode easier
 vim.keymap.set('n', '<Esc>', function() vim.fn.setreg("/", nil) end) -- clear search results
 
@@ -43,5 +44,13 @@ vim.api.nvim_create_autocmd("BufWritePost",
 			dofile(t.file)
 			require'packer'.sync()
 		end
+	}
+)
+vim.api.nvim_create_autocmd("QuickFixCmdPost",
+	{
+		group=vim.api.nvim_create_augroup('autoopen_qf', {clear=true}),
+		pattern='[^l]*',
+		command='cwindow',
+		nested=true
 	}
 )
