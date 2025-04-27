@@ -20,6 +20,7 @@ return {
 				dependencies={'honza/vim-snippets'} -- snippet collection
 			},
 		}, -- snippet completion
+		{"nvim-tree/nvim-web-devicons"},
 	},
 	config = function() 
 		local cmp = require('cmp')
@@ -27,30 +28,30 @@ return {
 
 		local kind_icons = {
 			Text = "",
-			Method = "",
-			Function = "",
+			Method = "󰆧",
+			Function = "󰊕",
 			Constructor = "",
-			Field = "",
-			Variable = "",
-			Class = "ﴯ",
+			Field = "󰇽",
+			Variable = "󰂡",
+			Class = "󰠱",
 			Interface = "",
 			Module = "",
-			Property = "ﰠ",
+			Property = "󰜢",
 			Unit = "",
-			Value = "",
+			Value = "󰎠",
 			Enum = "",
-			Keyword = "",
+			Keyword = "󰌋",
 			Snippet = "",
-			Color = "",
-			File = "",
+			Color = "󰏘",
+			File = "󰈙",
 			Reference = "",
-			Folder = "",
+			Folder = "󰉋",
 			EnumMember = "",
-			Constant = "",
+			Constant = "󰏿",
 			Struct = "",
 			Event = "",
-			Operator = "",
-			TypeParameter = ""
+			Operator = "󰆕",
+			TypeParameter = "󰅲",
 		}
 		function has_words_before()
 			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
