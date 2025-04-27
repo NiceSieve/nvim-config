@@ -1,6 +1,8 @@
 local o = vim.opt
 
 o.number = true --line numbers
+o.relativenumber = true --relative line numbers
+o.cursorline = true --mark current line
 o.inccommand = "split" --incremental :s preview
 o.undofile = true --remember undo history
 o.hidden = true --don't close buffers when opening another
