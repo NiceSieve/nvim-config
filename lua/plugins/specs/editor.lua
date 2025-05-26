@@ -1,7 +1,25 @@
 return {
 	{
-		'svermeulen/vim-NotableFt',
-		keys={'f','F','t','T'},
+		"folke/flash.nvim",
+		event="VeryLazy",
+		opts={
+			modes={
+				char={
+					highlight={
+						backdrop=false,
+					},
+				},
+			},
+		},
+		keys={
+			{ "gs", mode = { "n" }, function() require("flash").jump() end, desc = "Flash" },
+			{ "s", mode = { "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+			{ "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+		}
+	},
+	{
+		"folke/which-key.nvim",
+		event="VeryLazy",
 	},
 	{ -- surround text with stuff
 		'machakann/vim-sandwich',
@@ -27,7 +45,7 @@ return {
 	{ -- visual undo tree
 		'mbbill/undotree',
 		init=function() vim.g.undotree_SetFocusWhenToggle = 1 end,
-		keys={{'<leader>u', '<cmd>UndotreeToggle<cr>'}},
+		keys={{'<leader>u', '<cmd>UndotreeToggle<cr>', desc="Open Undo Tree"}},
 	},
 	{ -- turn lines into columns
 		'FooSoft/vim-argwrap',

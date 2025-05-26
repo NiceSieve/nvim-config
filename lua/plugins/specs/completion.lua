@@ -16,6 +16,7 @@ return {
 					require('luasnip').filetype_extend("all", { "_" })
 					require("luasnip.loaders.from_snipmate").lazy_load()
 				end,
+				build = "make install_jsregexp",
 				module = 'luasnip',
 				dependencies={'honza/vim-snippets'} -- snippet collection
 			},
