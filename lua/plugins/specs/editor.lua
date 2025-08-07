@@ -20,6 +20,7 @@ return {
 	{
 		"folke/which-key.nvim",
 		event="VeryLazy",
+		opts={win={border='single'}},
 	},
 	{ -- surround text with stuff
 		'machakann/vim-sandwich',
