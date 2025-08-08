@@ -1,8 +1,13 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
-	build=':TSUpdateSync',
+	build=':TSUpdate',
 	dependencies={
-		{'romgrk/nvim-treesitter-context'}, -- show context at top
+		{'romgrk/nvim-treesitter-context', opts={ -- show context at top
+			enable=true,
+			multiwindow=true,
+			separator='-',
+			mode='topline',
+		}},
 		{'nvim-treesitter/nvim-treesitter-textobjects'},
 		{'RRethy/nvim-treesitter-endwise'}, -- autopairs for lua
 		{'nvim-treesitter/nvim-treesitter-refactor'},

@@ -22,6 +22,7 @@ o.timeout = false -- I'm slow
 o.updatetime = 200
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>') -- exit term mode easier
 vim.keymap.set('n', '<Esc>', function() vim.fn.setreg("/", nil) end) -- clear search results
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 
 -- load plugins
 require("plugins.lazy")

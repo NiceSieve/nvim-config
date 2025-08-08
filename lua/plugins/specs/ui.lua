@@ -29,6 +29,11 @@ return {
 			telly.load_extension('fzf')
 		end
 	},
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = {"nvim-telescope/telescope.nvim"},
+		keys = {{'<leader>fe', '<cmd>Telescope file_browser<cr>'}},
+	},
 	{ -- clipboard manager
 		"AckslD/nvim-neoclip.lua",
 		opts={},
