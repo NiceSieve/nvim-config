@@ -28,3 +28,9 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 require("plugins.lazy")
 
 vim.cmd "colorscheme dracula"
+
+vim.lsp.enable('clangd')
+
+if vim.g.neovide then
+	vim.o.guifont = "Input Mono:h13"
+end

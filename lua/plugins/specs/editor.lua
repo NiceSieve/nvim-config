@@ -70,5 +70,6 @@ return {
 		'NeogitOrg/neogit',
 		opts={},
 		keys={{'<leader>g', function() require('neogit').open() end}},
-	}
+	},
+	{'numToStr/Comment.nvim', opts={}},
 }
