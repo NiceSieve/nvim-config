@@ -15,6 +15,7 @@ o.wrap = false -- nice for text, but makes code unreadable
 o.incsearch = true  -- incremental search
 o.ignorecase = true -- case insensitive
 o.wildignorecase = true -- case insensitive completion too
+o.winborder = "single"
 
 vim.g.mapleader = ' ' -- space is the leader cuz it's the biggest
 vim.g.maplocalleader = "\\"
