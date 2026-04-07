@@ -70,6 +70,11 @@ return {
 		'NeogitOrg/neogit',
 		opts={},
 		keys={{'<leader>g', function() require('neogit').open() end}},
+		dependencies={
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+		}
 	},
 	{'numToStr/Comment.nvim', opts={}},
+	{'Shatur/neovim-tasks', opts={}},
 }
