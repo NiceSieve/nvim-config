@@ -90,6 +90,5 @@ return {
 			"sindrets/diffview.nvim",
 		}
 	},
-	{'numToStr/Comment.nvim', opts={}},
 	{'Shatur/neovim-tasks', opts={}},
 }
