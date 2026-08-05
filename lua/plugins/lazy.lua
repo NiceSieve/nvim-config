@@ -26,7 +26,15 @@ require("lazy").setup({
 	install = { colorscheme = { "dracula" } },
 	-- automatically check for plugin updates
 	checker = { enabled = false, notify = false },
-	ui = { border = 'single' }
+	ui = { border = 'single' },
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"matchit",
+				"matchparen",
+			}
+		}
+	},
 })
 
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>')

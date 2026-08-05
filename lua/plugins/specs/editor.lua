@@ -25,7 +25,6 @@ return {
 	{ -- surround text with stuff
 		'machakann/vim-sandwich',
 		keys='s',
-		event='VeryLazy',
 	},
 	{ -- auto close parens etc.
 		"windwp/nvim-autopairs",
@@ -90,5 +89,5 @@ return {
 			"sindrets/diffview.nvim",
 		}
 	},
-	{'Shatur/neovim-tasks', opts={}},
+	{'Shatur/neovim-tasks', event="VeryLazy", opts={}},
 }
