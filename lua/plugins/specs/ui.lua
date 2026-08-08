@@ -13,7 +13,6 @@ return {
 			{'<leader>fg', '<cmd>Telescope live_grep<cr>'},
 			{'<leader>fb', '<cmd>Telescope buffers<cr>'},
 			{'<leader>fh', '<cmd>Telescope help_tags<cr>'},
-			{'<leader>fy', '<cmd>Telescope neoclip default<cr>'},
 		},
 		config = function()
 			local telly = require('telescope')
@@ -36,9 +35,14 @@ return {
 	},
 	{ -- clipboard manager
 		"AckslD/nvim-neoclip.lua",
-		opts={},
+		event = "TextYankPost",
+		keys = {{'<leader>fy', '<cmd>Telescope neoclip default<cr>'}},
+		opts={
+			enable_persistent_history = true,
+		},
 		dependencies={
 			{'kkharji/sqlite.lua', module = 'sqlite'},
+			{"nvim-telescope/telescope.nvim"},
 		}
 	},
 	{
