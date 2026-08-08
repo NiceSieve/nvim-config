@@ -71,8 +71,17 @@ return {
 		}
 	},
 	{
+		'stevearc/quicker.nvim',
+		ft = "qf",
+		opts = {},
+	},
+	{
 		'chrisbra/NrrwRgn',
-		event='VeryLazy',
+		keys = {
+			{'<leader>nr', mode='v'},
+			{'<leader>nd', '<cmd>NR<CR>', ft='diff'},
+		},
+		cmd = {'NR', 'NUD'},
 	},
 	{
 		'andymass/vim-matchup',
