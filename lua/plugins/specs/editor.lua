@@ -83,11 +83,19 @@ return {
 	{
 		'NeogitOrg/neogit',
 		opts={},
-		keys={{'<leader>g', function() require('neogit').open() end}},
+		keys={{'<leader>gg', function() require('neogit').open() end}},
 		dependencies={
 			"nvim-lua/plenary.nvim",
 			"sindrets/diffview.nvim",
 		}
 	},
-	{'Shatur/neovim-tasks', event="VeryLazy", opts={}},
+	{
+		'FabijanZulj/blame.nvim',
+		opts={},
+		keys={{'<leader>gb', ':BlameToggle<CR>'}},
+	},
+	{'Shatur/neovim-tasks',
+		cmd = "Task",
+		opts={},
+	},
 }
