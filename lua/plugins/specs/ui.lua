@@ -95,8 +95,9 @@ return {
 			local dracula_colors = require("dracula").colors()
 
 			-- Apply those plugin values directly to your custom highlight groups
-			vim.api.nvim_set_hl(0, "CmdlineCommand", { fg = dracula_colors.purple, bold = true }) 
-			vim.api.nvim_set_hl(0, "CmdlineSearch",  { fg = dracula_colors.yellow, bold = true }) 
+			vim.api.nvim_set_hl(0, "TinyCmdlineNormal", { bg = dracula_colors.menu }) 
+			vim.api.nvim_set_hl(0, "CmdlineCommand", { fg = dracula_colors.purple, bg = dracula_colors.menu, bold = true }) 
+			vim.api.nvim_set_hl(0, "CmdlineSearch",  { fg = dracula_colors.cyan, bg = dracula_colors.menu, bold = true }) 
 
 			local blink_cmdline_sync = vim.api.nvim_create_augroup("BlinkCmdlineColorSync", { clear = true })
 

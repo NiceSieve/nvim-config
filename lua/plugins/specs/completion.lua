@@ -56,6 +56,7 @@ return {
 			}
 		},
 	},
+	event = {'InsertEnter', 'CmdlineEnter'},
 	version = '1.*',
 }
 
