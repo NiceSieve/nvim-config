@@ -33,18 +33,6 @@ return {
 		dependencies = {"nvim-telescope/telescope.nvim"},
 		keys = {{'<leader>fe', '<cmd>Telescope file_browser<cr>'}},
 	},
-	{ -- clipboard manager
-		"AckslD/nvim-neoclip.lua",
-		event = "TextYankPost",
-		keys = {{'<leader>fy', '<cmd>Telescope neoclip default<cr>'}},
-		opts={
-			enable_persistent_history = true,
-		},
-		dependencies={
-			{'kkharji/sqlite.lua', module = 'sqlite'},
-			{"nvim-telescope/telescope.nvim"},
-		}
-	},
 	{
 		'nvim-lualine/lualine.nvim',
 		event = "VeryLazy",
