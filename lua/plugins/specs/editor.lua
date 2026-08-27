@@ -40,7 +40,8 @@ return {
 		event='BufWritePre',
 	},
 	{ -- smarter lookahead text objects
-		'wellle/targets.vim',
+		'nvim-mini/mini.ai',
+		config=true,
 		event='VeryLazy',
 	},
 	{ -- visual undo tree

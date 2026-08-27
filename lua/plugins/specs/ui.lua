@@ -38,9 +38,6 @@ return {
 		event = "VeryLazy",
 		dependencies={"nvim-tree/nvim-web-devicons"},
 		opts={
-			options={
-				theme='dracula-nvim'
-			},
 			sections={
 				lualine_b={'diagnostics'},
 				lualine_c={
