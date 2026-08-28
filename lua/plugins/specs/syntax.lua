@@ -37,7 +37,6 @@ return {{
 	},
 	{ -- autopairs for lua
 		'RRethy/nvim-treesitter-endwise',
-		event = "VeryLazy",
 	},
 	{
 		'JoosepAlviste/nvim-ts-context-commentstring',
