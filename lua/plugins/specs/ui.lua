@@ -10,15 +10,24 @@ return {
 					all = function(colors)
 						return {
 							normal = {
-								a = { bg = colors.lavender },
-								b = { fg = colors.lavender },
+								a = { bg = colors.mauve },
+								b = { fg = colors.mauve },
 							}
 						}
 					end,
 				},
 				noice = true,
 				which_key = true,
-			}
+			},
+			custom_highlights = function(colors)
+				return {
+					Pmenu = { bg = colors.base },
+					PmenuBorder = { bg = colors.base },
+					BlinkCmpMenuBorder = { fg = colors.mauve, bg = colors.base },
+					NoiceCmdlinePopupBorder = { fg = colors.mauve },
+					NoiceCmdlinePopupBorderSearch = { fg = colors.mauve },
+				}
+			end
 		}
 	},
 	{
