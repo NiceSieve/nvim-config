@@ -1,6 +1,25 @@
 return {
 	{ -- colorscheme
-		"Mofiqul/dracula.nvim"
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		opts = {
+			integrations = {
+				diffview = true,
+				lualine = {
+					all = function(colors)
+						return {
+							normal = {
+								a = { bg = colors.lavender },
+								b = { fg = colors.lavender },
+							}
+						}
+					end,
+				},
+				noice = true,
+				which_key = true,
+			}
+		}
 	},
 	{ -- fuzzy menu
 		'nvim-telescope/telescope.nvim',

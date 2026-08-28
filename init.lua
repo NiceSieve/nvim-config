@@ -30,7 +30,7 @@ require("plugins.lazy")
 vim.cmd.packadd "nvim.undotree"
 vim.keymap.set('n', '<leader>u', '<cmd>Undotree<cr>')
 
-vim.cmd "colorscheme dracula"
+vim.cmd.colorscheme "catppuccin-mocha"
 
 vim.lsp.enable('clangd')
 

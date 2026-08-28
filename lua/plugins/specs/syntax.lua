@@ -24,10 +24,6 @@ return {{
 			multiwindow=true,
 			mode='topline',
 		},
-		init = function()
-			vim.cmd "hi TreesitterContextBottom gui=underline guisp=Purple"
-			vim.cmd "hi TreesitterContextLineNumberBottom gui=underline guisp=Purple"
-		end,
 		event = "VeryLazy",
 	},
 	{
