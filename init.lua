@@ -27,6 +27,8 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 
 -- load plugins
 require("plugins.lazy")
+vim.cmd.packadd "nvim.undotree"
+vim.keymap.set('n', '<leader>u', '<cmd>Undotree<cr>')
 
 vim.cmd "colorscheme dracula"
 

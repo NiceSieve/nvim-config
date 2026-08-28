@@ -44,11 +44,6 @@ return {
 		config=true,
 		event='VeryLazy',
 	},
-	{ -- visual undo tree
-		'mbbill/undotree',
-		init=function() vim.g.undotree_SetFocusWhenToggle = 1 end,
-		keys={{'<leader>u', '<cmd>UndotreeToggle<cr>', desc="Open Undo Tree"}},
-	},
 	{ -- turn lines into columns
 		'Wansmer/treesj',
 		keys={{'<leader>a', '<cmd>TSJToggle<cr>'}},
