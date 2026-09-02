@@ -95,7 +95,10 @@ return {
 		keys={{'<leader>gg', function() require('neogit').open() end}},
 		dependencies={
 			"nvim-lua/plenary.nvim",
-			"sindrets/diffview.nvim",
+			{
+				"dlyongemallo/diffview-plus.nvim",
+				keys={{'<leader>gd', "<cmd>DiffviewToggle<CR>"}},
+			}
 		}
 	},
 	{
