@@ -7,8 +7,8 @@ return {
 		{'hrsh7th/cmp-nvim-lua'}, -- nvim lua API
 		{'hrsh7th/cmp-nvim-lsp', dependencies={'neovim/nvim-lspconfig'}}, -- LSP, when I do that
 		{'hrsh7th/cmp-path'}, -- complete paths
-		{'dmitmel/cmp-cmdline-history'}, -- command history
-		{'dmitmel/cmp-digraphs'}, -- special raku chars
+		-- {'dmitmel/cmp-cmdline-history'}, -- command history
+		{ "kdheepak/cmp-latex-symbols" }, -- special raku characters
 		{
 			'saadparwaiz1/cmp_luasnip',
 			dependencies= {
@@ -22,7 +22,7 @@ return {
 				dependencies={'honza/vim-snippets'} -- snippet collection
 			},
 		}, -- snippet completion
-		{"nvim-tree/nvim-web-devicons"},
+		{"nvim-mini/mini.icons"},
 	},
 	config = function() 
 		local cmp = require('cmp')
@@ -106,7 +106,8 @@ return {
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' }, -- for LSP
 				{ name = 'luasnip' }, -- For luasnip users.
-				{ name = 'nvim_lua' }
+				{ name = 'nvim_lua' },
+				{ name = 'latex_symbols' },
 			},{
 				{ name = 'calc' },
 				{ name = 'path' },
@@ -118,8 +119,6 @@ return {
 						end
 					}
 				},
-			},{
-				{ name = 'digraphs'}
 			}),
 			formatting = {
 				format = function(entry, vim_item)
@@ -160,7 +159,7 @@ return {
 		cmp.setup.cmdline(':', {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
-				{ name = 'cmdline_history' },
+				-- { name = 'cmdline_history' },
 				{ name = 'cmdline' }
 			},{
 				{ name = 'buffer' }

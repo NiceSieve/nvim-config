@@ -115,7 +115,7 @@ return {
 		"gbprod/yanky.nvim",
 		event = "TextYankPost",
 		keys = {
-			{'<leader>fy', '<cmd>Telescope yank_history<cr>'},
+			{ "<leader>fy", function() Snacks.picker.yanky() end, mode = { "n", "x" }, desc = "Open Yank History" },
 			{ "<leader>p", "<cmd>YankyRingHistory<cr>", mode = { "n", "x" }, desc = "Open Yank History" },
 			{ "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
 			{ "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put yanked text after cursor" },
@@ -143,7 +143,7 @@ return {
 		},
 		dependencies={
 			{'kkharji/sqlite.lua', module = 'sqlite'},
-			{"nvim-telescope/telescope.nvim"},
+			{"folke/snacks.nvim"},
 		}
 	},
 }

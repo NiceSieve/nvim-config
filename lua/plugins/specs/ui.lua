@@ -21,41 +21,35 @@ return {
 			}
 		}
 	},
-	{ -- fuzzy menu
-		'nvim-telescope/telescope.nvim',
+	{
+		"folke/snacks.nvim",
+		priority = 500,
+		lazy = false,
+		opts = {
+			bufdelete = { enabled = true },
+			explorer = { enabled = true },
+			input = { enabled = true },
+			picker = { enabled = true },
+		},
 		dependencies = {
-			{'nvim-lua/plenary.nvim'},
-			{'nvim-telescope/telescope-fzf-native.nvim', build='make'}
+			"nvim-mini/mini.icons",
+			config = function()
+				require('mini.icons').setup()
+				MiniIcons.mock_nvim_web_devicons()
+			end,
 		},
 		keys = {
-			{'<leader>ff', '<cmd>Telescope find_files<cr>'},
-			{'<leader>fg', '<cmd>Telescope live_grep<cr>'},
-			{'<leader>fb', '<cmd>Telescope buffers<cr>'},
-			{'<leader>fh', '<cmd>Telescope help_tags<cr>'},
-		},
-		config = function()
-			local telly = require('telescope')
-			telly.setup({
-				extensions = {
-					fzf = {
-						fuzzy = true,                    -- false will only do exact matching
-						override_generic_sorter = true,  -- override the generic sorter
-						override_file_sorter = true,     -- override the file sorter
-						case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-					}
-			}})
-			telly.load_extension('fzf')
-		end
-	},
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = {"nvim-telescope/telescope.nvim"},
-		keys = {{'<leader>fe', '<cmd>Telescope file_browser<cr>'}},
+			{ "<leader>ff", function() Snacks.picker.files() end, desc = "Files" },
+			{ "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+			{ "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
+			{ "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
+			{ "<leader>fe", function() Snacks.explorer() end, desc = "File Explorer" },
+			{ "<leader>fh", function() Snacks.picker.help() end, desc = "Help Pages" },
+		}
 	},
 	{
 		'nvim-lualine/lualine.nvim',
 		event = "VeryLazy",
-		dependencies={"nvim-tree/nvim-web-devicons"},
 		opts={
 			sections={
 				lualine_b={'diagnostics'},
@@ -101,5 +95,16 @@ return {
 			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
 		}
-	}
+	},
+	{
+		'stevearc/oil.nvim',
+		opts = {
+			watch_for_changes = true,
+			view_options = {
+				show_hidden = true,
+			},
+		},
+		dependencies = { "nvim-mini/mini.icons" }, -- use if you prefer nvim-web-devicons
+		lazy = false,
+},
 }
