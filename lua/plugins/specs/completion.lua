@@ -23,6 +23,8 @@ return {
 	'saghen/blink.cmp',
 	-- optional: provides snippets for the snippet source
 	dependencies = {
+		'erooke/blink-cmp-latex',
+		'joelazar/blink-calc',
 		'rafamadriz/friendly-snippets',
 		-- luasnip is bigger than I need, but I'll keep a note here
 		-- { 
@@ -71,7 +73,16 @@ return {
 			},
 		},
 		sources = {
+			default = { 'lsp', 'buffer', 'snippets', 'path', 'latex', 'calc' },
 			providers = {
+				latex = {
+					name = 'Latex',
+					module = 'blink-cmp-latex',
+				},
+				calc = {
+					name = 'Calc',
+					module = 'blink-calc',
+				},
 				-- show buffer completions even when LSP
 				lsp = { fallbacks = {} },
 			}
