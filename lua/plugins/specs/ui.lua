@@ -26,6 +26,7 @@ return {
 					BlinkCmpMenuBorder = { fg = colors.mauve, bg = colors.base },
 					NoiceCmdlinePopupBorder = { fg = colors.mauve },
 					NoiceCmdlinePopupBorderSearch = { fg = colors.mauve },
+					UfoFoldedEllipsis = { fg = colors.mauve, bg = 'NONE' },
 				}
 			end
 		}
