@@ -26,7 +26,7 @@ require("lazy").setup({
 	install = { colorscheme = { "dracula" } },
 	-- automatically check for plugin updates
 	checker = { enabled = false, notify = false },
-	ui = { border = 'single' },
+	ui = { border = 'rounded' },
 	performance = {
 		rtp = {
 			disabled_plugins = {
