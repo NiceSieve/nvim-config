@@ -24,6 +24,8 @@ return {
 					Pmenu = { bg = colors.base },
 					PmenuBorder = { bg = colors.base },
 					BlinkCmpMenuBorder = { fg = colors.mauve, bg = colors.base },
+					FloatBorder = { fg = colors.mauve, bg = colors.base },
+					NormalFloat = { bg = colors.base },
 					NoiceCmdlinePopupBorder = { fg = colors.mauve },
 					NoiceCmdlinePopupBorderSearch = { fg = colors.mauve },
 					UfoFoldedEllipsis = { fg = colors.mauve, bg = 'NONE' },

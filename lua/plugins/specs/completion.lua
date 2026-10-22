@@ -75,6 +75,11 @@ return {
 		sources = {
 			default = { 'lsp', 'buffer', 'snippets', 'path', 'latex', 'calc' },
 			providers = {
+				buffer = {
+					opts = {
+						get_bufnrs = vim.api.nvim_list_bufs
+					}
+				},
 				latex = {
 					name = 'Latex',
 					module = 'blink-cmp-latex',
