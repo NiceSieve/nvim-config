@@ -4,8 +4,11 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
+			auto_integrations = false,
 			integrations = {
+				blink_cmp = { enabled = true },
 				diffview = true,
+				flash = true,
 				lualine = {
 					all = function(colors)
 						return {
@@ -16,7 +19,11 @@ return {
 						}
 					end,
 				},
+				mini = { enabled = true },
+				neogit = true,
 				noice = true,
+				ufo = true,
+				snacks = { enabled = true },
 				which_key = true,
 			},
 			custom_highlights = function(colors)
